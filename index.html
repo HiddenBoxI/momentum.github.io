@@ -3,21 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Reliability in the Workplace</title>
+  <title>Workplace Safety & Reliability</title>
 
   <style>
     :root {
       --primary: #2563eb;
+      --secondary: #4f46e5;
       --accent: #06b6d4;
       --bg: #f5f7ff;
       --card: #ffffff;
       --text: #1f2937;
       --muted: #6b7280;
-      --shadow: 0 12px 30px rgba(0,0,0,0.08);
+      --border: #e5e7eb;
+      --shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
       --radius: 20px;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
@@ -27,129 +33,236 @@
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: 40px auto;
       padding: 20px;
     }
 
     .hero {
-      background: linear-gradient(135deg, #2563eb, #06b6d4);
+      background: linear-gradient(135deg, var(--secondary), var(--accent));
       color: white;
+      padding: 52px 30px;
       border-radius: 28px;
-      padding: 50px 30px;
       text-align: center;
       box-shadow: var(--shadow);
+      margin-bottom: 28px;
     }
 
-    .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    .hero h1 {
+      font-size: 2.6rem;
+      margin-bottom: 12px;
+    }
 
-    .hero p { max-width: 700px; margin: 0 auto; }
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      opacity: 0.96;
+    }
 
     .section {
       background: var(--card);
       border-radius: var(--radius);
       padding: 28px;
-      margin-top: 25px;
+      margin-bottom: 24px;
       box-shadow: var(--shadow);
     }
 
     .section h2 {
-      font-size: 1.5rem;
       color: #1e3a8a;
-      margin-bottom: 15px;
       border-left: 6px solid var(--primary);
       padding-left: 12px;
+      margin-bottom: 16px;
+      font-size: 1.6rem;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
+    .section h3 {
+      color: #1d4ed8;
+      margin-bottom: 12px;
+      font-size: 1.15rem;
     }
-
-    .card {
-      background: #f9fafb;
-      border-radius: 16px;
-      padding: 20px;
-      border: 1px solid #e5e7eb;
-    }
-
-    .card h3 {
-      color: var(--primary);
-      margin-bottom: 10px;
-    }
-
-    .card ul {
-      padding-left: 18px;
-    }
-
-    .card li { margin-bottom: 8px; }
 
     .highlight {
       background: #eef2ff;
       border: 1px solid #c7d2fe;
-      border-radius: 15px;
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .highlight p {
+      margin-bottom: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 14px;
+    }
+
+    .card {
+      background: #f9fafb;
+      border: 1px solid var(--border);
+      border-radius: 16px;
       padding: 20px;
+    }
+
+    .card ul {
+      padding-left: 20px;
+      margin-bottom: 14px;
+    }
+
+    .card li {
+      margin-bottom: 8px;
+    }
+
+    .example-box {
+      background: #ecfeff;
+      border: 1px solid #a5f3fc;
+      border-radius: 12px;
+      padding: 14px;
+      margin-top: 10px;
+    }
+
+    .example-box p {
+      margin: 0;
     }
 
     .activity-box {
       background: #fff7ed;
       border: 1px solid #fdba74;
-      border-radius: 15px;
-      padding: 20px;
+      border-radius: 16px;
+      padding: 18px;
     }
 
-    .activity-box h3 {
-      color: #c2410c;
+    .activity-box p {
       margin-bottom: 10px;
     }
 
     .activity-box ul {
       padding-left: 20px;
+      margin-top: 10px;
     }
 
-    .activity-box li { margin-bottom: 10px; }
+    .activity-box li {
+      margin-bottom: 8px;
+    }
 
     .answer-box {
-      background: #ecfeff;
-      border: 1px solid #a5f3fc;
-      border-radius: 15px;
-      padding: 20px;
-      margin-top: 15px;
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      border-radius: 12px;
+      padding: 14px;
+      margin-top: 14px;
+    }
+
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 15px;
+      margin-top: 14px;
+    }
+
+    .rights-card {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .rights-card strong {
+      display: block;
+      color: var(--primary);
+      margin-bottom: 6px;
     }
 
     .footer {
       text-align: center;
-      margin-top: 20px;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.92rem;
+      margin-top: 10px;
+      padding-bottom: 20px;
+    }
+
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .section h2 {
+        font-size: 1.35rem;
+      }
     }
   </style>
 </head>
-
 <body>
   <div class="container">
 
     <section class="hero">
-      <h1>Reliability in the Workplace</h1>
+      <h1>Workplace Safety & Reliability</h1>
       <p>
-        Reliability, work ethic, and quality are three key traits that define how a person performs at work.
-        Together, they determine whether someone is dependable, effective, and valuable to a team.
+        This website explains two important workplace topics: occupational safety and reliability.
+        It also shows how work ethic, quality, and reliability work together to make someone a valuable employee.
       </p>
     </section>
 
     <section class="section">
-      <h2>What is Reliability?</h2>
+      <h2>Occupational Safety and Health</h2>
+
       <div class="highlight">
         <p>
-          Reliability means being dependable and trustworthy. A reliable worker follows through on commitments,
-          meets deadlines, communicates when issues arise, and maintains consistency over time.
+          Occupational health and safety refers to the practices, policies, and procedures used
+          to protect workers from hazards, injuries, and unsafe conditions in the workplace.
+        </p>
+        <p>
+          The goal is to create a safe and healthy environment by identifying risks, preventing accidents,
+          and encouraging safe behavior on every jobsite.
         </p>
       </div>
+
+      <h3 style="margin-top: 18px;">5 Key Rights</h3>
+      <div class="rights-grid">
+        <div class="rights-card">
+          <strong>Right to Know</strong>
+          Workers should know the hazards and risks on the jobsite.
+        </div>
+        <div class="rights-card">
+          <strong>Right to Protective Equipment</strong>
+          Workers should have proper safety equipment before starting work.
+        </div>
+        <div class="rights-card">
+          <strong>Right to Report Hazards</strong>
+          Unsafe conditions should be reported immediately.
+        </div>
+        <div class="rights-card">
+          <strong>Right to Report Injuries</strong>
+          Workers should report injuries and receive help right away.
+        </div>
+        <div class="rights-card">
+          <strong>Right to a Safe Workplace</strong>
+          Workers should not be expected to use unsafe tools or work in dangerous conditions.
+        </div>
+      </div>
+
+      <h3 style="margin-top: 18px;">Worker Responsibilities</h3>
+      <p>
+        Workers must follow safety rules, use proper equipment, report hazards and injuries,
+        and help keep the work area safe for everyone. Safety is not only the supervisor’s job —
+        it is everyone’s responsibility.
+      </p>
     </section>
 
     <section class="section">
-      <h2>Work Ethic vs Quality vs Reliability</h2>
+      <h2>Reliability in the Workplace</h2>
+
+      <div class="highlight">
+        <p>
+          Reliability means being dependable and trustworthy. A reliable worker follows through
+          on commitments, meets deadlines, communicates when problems come up, and can be counted on over time.
+        </p>
+      </div>
+
+      <h3 style="margin-top: 18px;">Work Ethic vs Quality vs Reliability</h3>
       <div class="grid">
 
         <div class="card">
@@ -161,6 +274,10 @@
             <li>Staying focused</li>
             <li>Being accountable</li>
           </ul>
+
+          <div class="example-box">
+            <p><strong>Example:</strong> A plumbing apprentice arrives on time every morning, gets tools ready before work starts, listens carefully to instructions, and stays busy instead of waiting to be told what to do.</p>
+          </div>
         </div>
 
         <div class="card">
@@ -172,6 +289,10 @@
             <li>Doing work properly</li>
             <li>Producing reliable results</li>
           </ul>
+
+          <div class="example-box">
+            <p><strong>Example:</strong> A worker measures pipe carefully, makes clean cuts, checks fittings before installation, and completes the task neatly so the system works properly and does not leak.</p>
+          </div>
         </div>
 
         <div class="card">
@@ -181,49 +302,46 @@
             <li>Meeting deadlines</li>
             <li>Being dependable</li>
             <li>Communicating issues</li>
-            <li>Consistency over time</li>
+            <li>Maintaining consistency over time</li>
           </ul>
+
+          <div class="example-box">
+            <p><strong>Example:</strong> A worker promises to finish a task by the end of the day, keeps the supervisor updated if there is a delay, and consistently completes assigned work without needing constant reminders.</p>
+          </div>
         </div>
 
       </div>
-    </section>
 
-    <section class="section">
-      <h2>How They Work Together</h2>
-      <div class="highlight">
-        <p><strong>Work ethic</strong> drives how hard you try.</p>
-        <p><strong>Quality</strong> reflects how well you do the work.</p>
-        <p><strong>Reliability</strong> shows whether people can count on you every time.</p>
-        <p>
-          When all three are strong, you become a highly valuable worker in any workplace.
-        </p>
-      </div>
+      <h3 style="margin-top: 18px;">How They Work Together</h3>
+      <p>
+        Work ethic drives how hard you try, quality reflects how well you do the work,
+        and reliability shows whether people can count on you every time. When all three are strong,
+        you become a highly valued worker in any workplace.
+      </p>
     </section>
 
     <section class="section">
       <h2>Activity: Who Would You Hire?</h2>
+
       <div class="activity-box">
-        <h3>Quick Discussion (2–3 minutes)</h3>
+        <p><strong>Person A:</strong> Always on time, works hard, but makes frequent mistakes.</p>
+        <p><strong>Person B:</strong> Does excellent work, but is often late and misses deadlines.</p>
+        <p><strong>Question:</strong> Who would you hire and why?</p>
+
         <ul>
-          <li><strong>Person A:</strong> Always on time, works hard, but makes mistakes</li>
-          <li><strong>Person B:</strong> Does excellent work, but is often late</li>
-          <li>Question: <strong>Who would you hire and why?</strong></li>
+          <li>Discuss with a partner or small group for 2–3 minutes.</li>
+          <li>Choose one person and explain your reason.</li>
+          <li>Share your answer with the class.</li>
         </ul>
 
         <div class="answer-box">
-          <p>
-            If I had to choose, I would choose Person A.
-          </p>
-          <p>
-            Work ethic and reliability are harder to teach, while quality can be improved through training and experience.
-            A dependable worker can grow, but an unreliable worker can negatively affect the entire team.
-          </p>
+          <p><strong>Suggested answer:</strong> I would choose Person A, because work ethic and reliability are harder to teach. Quality can usually improve with practice, training, and feedback. A dependable worker can grow, but an unreliable worker can negatively affect the whole team.</p>
         </div>
       </div>
     </section>
 
     <div class="footer">
-      Classroom presentation — Reliability, Work Ethic, and Quality
+      Classroom presentation website — Workplace Safety & Reliability
     </div>
 
   </div>
